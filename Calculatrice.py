@@ -3,7 +3,44 @@ from tkinter.messagebox import *
 import math, random
 #J'ai importé random, math et messagebox qui n'ont rien à voire mais je me suis dit pk pas pour une amélioration future !
 
-
+def Clavier(event):
+	#Grace à cette fonction on peut appuyer sur les touches au lieu du bouton 
+	t = event.keysym
+	print(t)
+	if t == '1':
+		un()
+	if t == '2':
+		deux()
+	if t == '3':
+		trois()
+	if t == '4':
+		quatre()
+	if t =='5':
+		cinq()
+	if t == '6':
+		six()
+	if t == '7':
+		sept()
+	if t == '8':
+		huit()
+	if t == '9':
+		neuf()
+	if t == '0':
+		zéro()
+	if t == 'x' or t == 'asterisk':
+		multiplier()
+	if t == 'slash' or t =='colon':
+		diviser()
+	if t == 'plus':
+		plus()
+	if t == 'minus':
+		moins()
+	if t == 'BackSpace':
+		Supp()
+	if t == 'period' or t == 'coma':
+		point()
+	if t == 'equal' or t == 'Return':
+		Res()
 
 
 '''calculatrice permettant d'effectuer des calcules simples (addition, soustraction, division et multiplication). Il reste certaines
@@ -223,5 +260,7 @@ Button(root, text = '3',width = '10',command =trois).grid(row = 6, column = 3)
 Button(root, text = '.',width = '10',command =point).grid(row = 7, column = 1)
 Button(root, text = '0',width = '10',command =zéro).grid(row = 7, column = 2)
 Button(root, text = '=',width = '10',command = Res).grid(row = 7, column = 3)
+
+root.bind('<Key>', Clavier)
 
 root.mainloop()
